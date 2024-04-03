@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- box-shadowの確認も含む、各自値を変えて確認 -->
+  <!-- ボックス要素のresizeのcss指定には右下に拡大するためのところがある、通常のブラウザのデフォルトの挙動としては、テキストエリアはboth、他の要素はnoneとなる。他に、horizontal,vertical,initialがある。 -->
+  <!-- box-shadowは -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning CSS Properties</title>
+    <style>
+      /* ボックスのスタイル */
+      .box {
+        width: 300px;
+        height: 200px;
+        background-color: #f0f0f0;
+        border: 2px solid #333;
+        margin: 20px;
+        padding: 20px;
+        overflow: auto; /* コンテンツがボックスからはみ出た場合にスクロールバーを表示 */
+        resize: both;
+        /* ボックスのサイズをユーザーが変更可能にする */
+        box-shadow: 50px 300px 10px rgba(0, 0, 0, 0.5); /* ボックスに影を付ける;値を色々変更してみるとよくわかる */
+        box-sizing: border-box; /* ボックスのサイズ計算方法を変更する */
+      }
+
+      /* テキストエリアのスタイル */
+      textarea {
+        width: 300px; /* 初期の幅 */
+        height: 150px; /* 初期の高さ */
+        resize: both; /* テキストエリアのサイズをユーザーが変更可能にする */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" contenteditable>
+      <p>このボックスのサイズを変更してみてください。</p>
+      <p>ここにはテキストや画像などのコンテンツが入ります。</p>
+    </div>
+    <textarea>
+This is a resizable textarea. You can drag the bottom right corner to resize it.</textarea
+    >
+  </body>
+</html>

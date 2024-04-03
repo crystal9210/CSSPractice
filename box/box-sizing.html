@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning box-sizing Property</title>
+     <!-- ☆スタイルを特定の属性以外、共通化して比較するとわかりやすい -->
+     <!-- ☆☆border-boxを指定した場合、あなたが設定したwidthとheightの値は、その要素のコンテンツ領域、padding、そしてborderを合わせた全体のサイズを指します。とありますが、つまり、htightおよびwidthがそれぞれ300pxで、border,paddingがごうけい100pxのとき純粋なコンテンツ領域は200pxということ！ -->
+
+     <!-- スタイルの文字が領域より外に出ている問題について：HTMLとCSSのコードを見る限り、border-boxの領域内でコンテンツの文字列が背景色の外に出てしまう原因は、指定されたheightとwidthの値がpaddingとborderを含めた全体のサイズを指しているにも関わらず、この設定されたサイズがコンテンツを適切に収めるには小さすぎるためです。border-boxを使用する場合、widthとheightの値は、コンテンツの領域、padding、borderの全てを含むサイズを指しますが、コンテンツに対して十分な空間が確保されていないことが考えられます。 -->
+    <style>
+      .box{
+        height:100px;
+        width: 200px;
+        padding: 10px;
+        border: 10px solid black;
+        margin: 100px;
+      }
+      .content-box {
+        box-sizing: content-box;
+        background-color: lightblue;
+      }
+
+      .border-box {
+        box-sizing: border-box;
+        background-color: lightcoral;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Box Sizing Examples</h2>
+
+      <!-- content-box -->
+      <div class="box content-box">
+        content-box: paddingとborderが内側の幅に含まれません。
+      </div>
+
+      <!-- border-box -->
+      <div class="box border-box">
+        border-box: paddingとborderが内側の幅に含まれます。
+      </div>
+
+    <!-- これは試験的に一部のブラウザで導入されたものの、Web標準としての採用は進んでいない -->
+      <!-- padding-box -->
+      <!-- <div class="box padding-box">
+        <h3>Padding Box</h3>
+        <p>Padding Box: ボーダーとパディングが要素のサイズに含まれます。</p> -->
+      </div>
+    </div>
+  </body>
+</html>
