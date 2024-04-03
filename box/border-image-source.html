@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Border Image Example</title>
+    <!-- border-image-sourceプロパティを使用する例 -->
+    <style>
+      .border-image {
+        width: 300px;
+        height: 200px;
+        border: 200px solid transparent;
+        padding: 15px;
+        /* ここで画像を指定します */
+        border-image-source: url("border-image.png");
+        /* 画像の分割方法を指定します */
+        border-image-slice: 100%;
+
+        /* コンテナ全体を回転させる（例: 10度） */
+        transform: rotate(10deg);
+
+        /* 画像をどのように繰り返すかを指定します */
+        border-image-repeat: repeat;
+        /*
+        border-image-repeat: round;
+        ：領域の全ての角に画像を配置
+        */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="border-image">
+      <h1>カピバラかわいい</h1>
+    </div>
+  </body>
+</html>
