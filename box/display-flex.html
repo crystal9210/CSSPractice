@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flexbox Example</title>
+    <!-- display:flex;一次元レイアウト(行or列)のためのシステム、フレックスボックスを使うと、子要素(フレックスアイテム)のサイズ、順序、感覚を用意に調整できる -->
+    <style>
+      .flex-container {
+        display: flex;
+        justify-content: space-around; /* アイテム間のスペースを均等に分布 */
+        align-items: center; /* アイテムを垂直方向に中央揃え */
+        height: 200px; /* コンテナの高さを設定 */
+        background-color: lightgrey;
+      }
+
+      .flex-item {
+        width: 100px; /* 各アイテムの幅を設定 */
+        height: 100px; /* 各アイテムの高さを設定 */
+        background-color: teal;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        line-height: 100px; /* テキストを垂直中央に配置 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+    </div>
+  </body>
+</html>

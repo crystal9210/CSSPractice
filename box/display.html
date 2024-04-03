@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Display Property Examples</title>
+    <!-- displayプロパティの各値：
+    　①block:要素がブロックレベル要素として表示、新しい行から要素が始まり利用可能な全幅を占める；<div>,<p>のデフォルト
+      ②要素をインラインレベル要素(要素が文書の流れに沿って横に並び、必要な幅のみを占める)として表示
+      ③inline-block:要素をインラインレベルで表示しつつブロックレベル要素のように幅と高さを指定できる
+      ④flex:要素非表示；要素はレンダリングされない＋文書のレイアウトにも影響なし
+      ⑤flex-box:要素をフレックスボックスコンテナとして表示
+      ⑥grid:要素をグリッドコンテナとして表示
+      細かいことはめんどくさくなったのでGPTの解答をコード下部に添付 -->
+    <style>
+      .block {
+        display: block;
+        background-color: lightblue;
+        margin: 10px 0;
+        padding: 10px;
+      }
+
+      .inline {
+        display: inline;
+        background-color: lightgreen;
+        margin: 10px;
+        padding: 10px;
+      }
+
+      .inline-block {
+        display: inline-block;
+        background-color: lightcoral;
+        margin: 10px;
+        padding: 10px;
+      }
+
+      .none {
+        display: none;
+      }
+
+      .flex-container {
+        display: flex;
+        background-color: lightgoldenrodyellow;
+        padding: 10px;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        background-color: lavender;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="block">Block Element</div>
+    <span class="inline">Inline Element</span>
+    <span class="inline-block">Inline-Block Element</span>
+    <div class="none">This element is hidden.</div>
+
+    <div class="flex-container">
+      <div>Flex Item 1</div>
+      <div>Flex Item 2</div>
+    </div>
+
+    <div class="grid-container">
+      <div>Grid Item 1</div>
+      <div>Grid Item 2</div>
+    </div>
+  </body>
+</html>
+
+<!-- text-align: center
+text-align: center;はCSSプロパティの一つで、要素内のテキストやインライン要素（例えば、スパンや画像など）を中央揃えにします。このプロパティは、ブロックレベル要素（<div>、<p>など）に適用され、その要素内の内容を水平方向の中央に配置します。ただし、text-alignはテキストやインライン要素の配置に影響を与えるだけで、ブロックレベル要素自体の位置を変更するわけではありません。
+
+グリッドについて
+CSS Grid Layout（通称「グリッド」）は、ウェブページを二次元（行と列）のグリッドベースのレイアウトに整理するための強力なツールです。グリッドを使用すると、ページを複数の行と列に分割し、そのセルにHTML要素を配置することができます。これにより、複雑なレイアウトや整列、レスポンシブデザインが容易になります。グリッドシステムは、複雑なマガジンのレイアウトやデータのグリッドなど、柔軟で複雑なレイアウトを必要とする場面で特に有効です。
+
+FlexとInline-blockの違い
+flexとinline-blockは、どちらも要素のレイアウト方法を制御するCSSの機能ですが、用途と挙動に違いがあります。
+
+Inline-block: display: inline-block;は、要素がインラインレベルで表示されるようにしますが、ブロックレベル要素の特性（幅と高さを指定できるなど）も持ち合わせています。inline-block要素は、同じ行に並んで表示されますが、それぞれの要素に対して幅と高さを個別に設定できる点が特徴です。inline-blockは、比較的単純なレイアウトや、テキストと同じ行に小さなブロック（例えば、ボタン）を配置したいときに便利です。
+
+Flex: display: flex;は、要素をフレックスコンテナに変換し、その子要素（フレックスアイテム）のレイアウトを柔軟に制御します。フレックスボックスモデルでは、子要素のサイズ、順序、間隔を簡単に調整でき、特に一次元レイアウト（行または列）に最適化されています。フレックスは、要素間のスペースの分配、要素の整列、動的なレイアウト調整など、より高度なレイアウト要件に対応できるため、レスポンシブデザインや複雑なウェブアプリケーションのUI設計に適しています。
+
+要するに、inline-blockは比較的シンプルなレイアウト変更や小規模な調整に適しているのに対し、flexはより複雑で動的なレイアウトに対する制御が必要な場合に優れた選択肢です。フレックスボックスを使用することで、開発者は要素のレイアウトと配置をより詳細に調整し、現代的なウェブデザインのニーズに対応できます。 -->
